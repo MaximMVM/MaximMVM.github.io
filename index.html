@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta charset="utf-8">
+     <script src="jquery-2-1-1.js"></script>
+     <script src="ion.sound-master/js/ion.sound.min.js"></script>
+     <script src="obj.js"></script>
+     <link rel="stylesheet" href="style.css">
+     
+     <title>Ватогенератор 2.0</title>
+    
+    <script>
+        //sounds
+    var s_name = [];
+          ion.sound({
+    sounds: [
+        {
+            name: "crime"
+        },
+        {
+            name: "our"
+        },
+        {
+            name: "computer_error"
+        }
+
+    ],
+    volume: 1.0,
+    path: "ion.sound-master/sounds/",
+    preload: true
+});
+   
+ var ran2 = 1;    
+    </script>
+    
+ </head>
+  <body>
+<script>
+
+$(document).ready(function(){
+  
+ var link1 = document.getElementById("link"); 
+ var cb = document.getElementById('cb');
+ var cb1 = document.getElementById('cb1');
+ var sound_chbx = document.getElementById('sound_chbx');
+ var maxquote = x.length;
+ var tweet1 = document.getElementById("tweet_l");
+ 
+ //functions
+
+ 
+ $.fn.cotton = function(){
+    ran1 = parseInt(Math.random() *(maxquote-1)) +1;
+    
+    if (ran2 == 3) ran2 = 1 ;
+    ion.sound.play(s_name[ran2]);
+    ran2++;
+    $('#rus').animate( { width:"185px" }, 60).animate( { width: "200px" }, 80);
+    tweet1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1];
+    if (cb.checked) {
+         link1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1].toUpperCase() + '!11';
+         $('#quote').text(x[ran1].toUpperCase());
+         tweet1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1].toUpperCase();
+     }
+    
+    else {
+        link1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1];
+        $('#quote').text(x[ran1]);
+    }
+      if (! cb1.checked) link1.href = "#1";
+    
+      
+  }; 
+
+  
+  $.fn.caps = function(){
+     if (cb.checked) $('#pcb').text('КАПС ВКЛЮЧЕН!1');
+     else $('#pcb').text('Капс выключен');
+      
+ };
+ 
+ $.fn.triggerTwi = function(){
+     if (cb1.checked) {
+         $('#pcb1').text('Твитор включен');
+         $('#tweet_l').css('display','none');
+     }
+     else {
+         $('#pcb1').text('Твитор отключен');
+         $('#tweet_l').css('display','block');
+     }
+     
+ };
+ 
+ $.fn.triggerSound = function(){
+     if (!sound_chbx.checked) {
+         s_name = [];
+         $('#stat_sn').text('Звук отключен');
+     }
+     else {
+         s_name = ["", "crime", "our", "computer_error"];
+         $('#stat_sn').text('Звук включен');
+     }
+ };
+  
+});
+    </script>
+               
+                                                                <a href="https://twitter.com/share" id = "twi" class="twitter-share-button"  data-text ="qwer" data-size="large" data-dnt="false"></a>
+     
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+    
+    <header><h2 id = "quote"></h2>
+    
+    </header>
+    <div id = "main"> 
+     
+     <span id ="triggers">
+     <input type = "checkbox" id = "cb" onchange = "$(this).caps();">
+            <p id = "pcb" class="chbx_txt">Капс отключен</p>
+     <input type = "checkbox" id = "cb1" onchange = "$(this).triggerTwi()">
+            <p id = "pcb1" class="chbx_txt">Твитор отключен</p>
+     <input type = "checkbox" id = "sound_chbx" onchange = "$(this).triggerSound();">
+            <p id = "stat_sn"class="chbx_txt">Звук отключен</p>
+     </span>
+     
+     <a id = "tweet_l" href = "https://twitter.com/intent/tweet?text=" ><img src="img/twit.png"></a>
+     
+     <a id = "link" onclick = "$(this).cotton();" href = "https://twitter.com/intent/tweet?text=" title="заватить" > 
+     <img id="rus" src="img/russia.png" width="200px">
+     </a>
+     
+       
+     
+    </div> 
+    
+ </body>
+ </html>
