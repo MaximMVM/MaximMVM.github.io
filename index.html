@@ -55,6 +55,8 @@ $(document).ready(function(){
     if (ran2 == 3) ran2 = 1 ;
     ion.sound.play(s_name[ran2]);
     ran2++;
+    changeProgress();
+    
     $('#rus').animate( { width:"185px" }, 60).animate( { width: "200px" }, 80);
     tweet1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1];
     if (cb.checked) {
@@ -129,9 +131,16 @@ $(document).ready(function(){
      <img id="rus" src="img/russia.png" width="200px">
      </a>
      
-       
-     
-    </div> 
+           
+    </div>
+    
+    <div id = "bar">
+        <progress id = "step" class = "bar" max = 300 value = "0" ></progress>
+        
+       <progress id = "progress_b" class="bar" max = "100" value = "0"></progress>
+        
+    </div>
+    <script src ="crime_bar.js"></script> 
     
  </body>
  </html>

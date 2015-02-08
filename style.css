@@ -1,5 +1,6 @@
 body{
-margin:0, auto
+margin:0, auto;
+background: #f4f4f4;
 }
 #quote{ 
 //position:absolute;
@@ -45,5 +46,19 @@ margin-left: 210px;
 }
 #sound_st{
 padding-top:220px;
+}
+#bar{
+margin-top:400px;
+margin-left:4%;
+}
+#step{
+margin-left:10%;
+height:3px;
+width:70%;
+}
+#progress_b{
+width:90%;
+height:7px;
+
 }
 
