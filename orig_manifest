@@ -1,0 +1,19 @@
+CACHE MANIFEST
+#9.02.2015
+index.html
+style.css
+#
+img/russia.png
+img/twit.png
+img/progress.png
+#
+crime_bar.js
+obj.js
+jquery-2-1-1.js
+ion.sound-master/js/ion.sound.js
+ion.sound-master/js/jquery.sound.js
+#
+ion.sound-master/sounds/crime.mp3
+ion.sound-master/sounds/our.mp3
+ion.sound-master/sounds/crime.ogg
+ion.sound-master/sounds/our.ogg

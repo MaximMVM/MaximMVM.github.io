@@ -1,14 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html manifest="orig_manifest">
  <head>
      <meta charset="utf-8">
      <script src="jquery-2-1-1.js"></script>
      <script src="ion.sound-master/js/ion.sound.min.js"></script>
      <script src="obj.js"></script>
      <link rel="stylesheet" href="style.css">
+     <script>
+     
+     </script>
      
      <title>Ватогенератор 2.0</title>
-    
+     
     <script>
         //sounds
     var s_name = [];
@@ -36,7 +39,7 @@
  </head>
   <body>
 <script>
-
+    
 $(document).ready(function(){
   
  var link1 = document.getElementById("link"); 
@@ -46,8 +49,8 @@ $(document).ready(function(){
  var maxquote = x.length;
  var tweet1 = document.getElementById("tweet_l");
  
+ 
  //functions
-
  
  $.fn.cotton = function(){
     ran1 = parseInt(Math.random() *(maxquote-1)) +1;
@@ -56,7 +59,8 @@ $(document).ready(function(){
     ion.sound.play(s_name[ran2]);
     ran2++;
     changeProgress();
-    
+    $("#small_value").text(progress.value);
+    $("#crime_val").text(localStorage["crimes.progress"]);
     $('#rus').animate( { width:"185px" }, 60).animate( { width: "200px" }, 80);
     tweet1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1];
     if (cb.checked) {
@@ -111,7 +115,13 @@ $(document).ready(function(){
      
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     
-    <header><h2 id = "quote"></h2>
+    <header>
+        <progress id = "step_t" class = "bar_step" max = 300 value = "0" ></progress>
+        
+        <h2 id = "quote">
+    
+        </h2>
+        <progress id = "step" class = "bar_step" max = 300 value = "0" ></progress>
     
     </header>
     <div id = "main"> 
@@ -131,16 +141,30 @@ $(document).ready(function(){
      <img id="rus" src="img/russia.png" width="200px">
      </a>
      
+     
            
     </div>
-    
+
     <div id = "bar">
-        <progress id = "step" class = "bar" max = 300 value = "0" ></progress>
         
-       <progress id = "progress_b" class="bar" max = "100" value = "0"></progress>
         
+       <progress id = "progress_b"  max = "100" value = "0"></progress>
+
     </div>
     <script src ="crime_bar.js"></script> 
+    <div id = "textvalue">
+        
+        <p id = "txt_value">КРЫМНАШЕСТЬ:
+        <div id = "data_dig_crime">
+          <h2 id = "crime_val">0</h2>
+          <h5 id = "small_value">0</h6>
+          
+        </div>
+        <p id = "clear_data">очистить данные</p>
+        </p>
+        <script src = "datacrime.js"></script>
+
+    </div>
     
  </body>
  </html>

@@ -1,29 +1,63 @@
 var progress = document.getElementById('progress_b');
 var max_p = progress.max;
 var step = document.getElementById('step');
+var step_t = document.getElementById('step_t');
 var id_inc, id_dec;
 
-var changeProgress = function() {
-    progress.value += 5;
-    id_inc = setInterval('stepProgress()', 40);
-    if (step.value == step.max) {
-        clearInterval(id_inc);
-        id_dec = setInterval('step.value -= 10', 10);
-    };
-    //var id_dec = setInterval('step.value -= 10', 40);
-    if (step.value == 0) clearInterval(id_dec);
-    
-    //$('#step').css('display', 'none');
-    
+if (localStorage["crimes.progress"] == undefined || NaN) localStorage["crimes.progress"] = 0;
 
+
+var changeProgress = function() {
+    progress.value += 2.5;
+    step.value = step.max;
+    step_t.value = step_t.max;
+    localStorage["crimes.progress1"] = progress.value;
+
+    id_dec = setInterval('stepProgress()', 250);
     
-    //
     if (progress.value == progress.max) {
+        localStorage["crimes.progress1"] = 0;
+        localStorage["crimes.progress"] ++;
         progress.value = 0;
     }
+    
 };
 
-var stepProggres = function() {
-    
+var stepProgress = function() {
+
+    if (step.value == 0) {
+        clearInterval(id_dec);
+    }
+    step.value -= 10; 
+ 
+    step_t.value -= 12;
     
 };
+
+$("#rus").bind("tripleclick", function() {
+   alert();
+});
+
+
+
+$('#rus').dblclick(function (){
+    $('#link').css('display','none');
+    $('#quote').css('color', '#660000');
+    $('#quote').text('ВОУ ВОУ, КУДА ТАК СПЕШИШЬ? Полехче. Подожди чуть-чуть, торопыга');
+    var trig_l = setInterval('vou()', 40);
+        
+});
+
+var vou = function(){
+    if (step.value == 0) { 
+        $('#link').css('display','block');
+        $('#quote').css('color','#000');
+        clearInterval(this);
+    };
+    
+};
+
+
+
+
+
