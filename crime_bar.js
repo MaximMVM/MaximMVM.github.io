@@ -2,6 +2,7 @@ var progress = document.getElementById('progress_b');
 var max_p = progress.max;
 var step = document.getElementById('step');
 var step_t = document.getElementById('step_t');
+var crime_twee = document.getElementById("crimes_twee");
 var id_inc, id_dec;
 
 if (localStorage["crimes.progress"] == undefined || NaN) localStorage["crimes.progress"] = 0;
@@ -12,6 +13,7 @@ var changeProgress = function() {
     step.value = step.max;
     step_t.value = step_t.max;
     localStorage["crimes.progress1"] = progress.value;
+    crime_twee.href = 'https://twitter.com/intent/tweet?text=Прокачал свою крымнашесть на  ' + localStorage["crimes.progress"] + progress.value;
 
     id_dec = setInterval('stepProgress()', 250);
     

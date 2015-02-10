@@ -116,6 +116,33 @@ $(document).ready(function(){
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     
     <header>
+        <div id = "must_no">
+            <img id = "no_remove" src = "img/no_remove.jpg">
+            <p ><h1 id = "no_so">Нельзя просто так взять и полностью удалить все данные</h1></p>
+        </div>
+        <div id = "overlay"></div>
+            
+            
+        <div id = "setting"></div>
+
+          <div id = "setting_window">
+          <a href = "#"><span id = "close">X</span></a>
+          
+          <span id ="triggers">
+     <input type = "checkbox" id = "cb" onchange = "$(this).caps();">
+            <p id = "pcb" class="chbx_txt">Капс отключен</p>
+     <input type = "checkbox" id = "cb1" onchange = "$(this).triggerTwi()">
+            <p id = "pcb1" class="chbx_txt">Твитор отключен</p>
+     <input type = "checkbox" id = "sound_chbx" onchange = "$(this).triggerSound();">
+            <p id = "stat_sn"class="chbx_txt">Звук отключен</p>
+     </span>
+          
+          
+          <p id = "clear_data"  class = "set_data"><a href="#">очистить данные</a></p> 
+          <p id = "beckup_data"  class = "set_data"><a href="#">востановить данные</a></p>
+          <p id = "remove_data"  class = "set_data"><a href = "#">полностью удалить данные</a></p>
+          <p id = "twe_crime"  class = "set_data"><a href = "#">включить автомат</a></p>  
+          </div>  
         <progress id = "step_t" class = "bar_step" max = 300 value = "0" ></progress>
         
         <h2 id = "quote">
@@ -126,14 +153,7 @@ $(document).ready(function(){
     </header>
     <div id = "main"> 
      
-     <span id ="triggers">
-     <input type = "checkbox" id = "cb" onchange = "$(this).caps();">
-            <p id = "pcb" class="chbx_txt">Капс отключен</p>
-     <input type = "checkbox" id = "cb1" onchange = "$(this).triggerTwi()">
-            <p id = "pcb1" class="chbx_txt">Твитор отключен</p>
-     <input type = "checkbox" id = "sound_chbx" onchange = "$(this).triggerSound();">
-            <p id = "stat_sn"class="chbx_txt">Звук отключен</p>
-     </span>
+     
      
      <a id = "tweet_l" href = "https://twitter.com/intent/tweet?text=" ><img src="img/twit.png"></a>
      
@@ -144,27 +164,32 @@ $(document).ready(function(){
      
            
     </div>
+    
+    <div id = "textvalue">
+        
+         <p id = "txt_value"><h2>КРЫМНАШЕСТЬ:</h2><a id = "crimes_twee" href = "https://twitter.com/intent/tweet?text=" ><img id = "tweet_crimes" src="img/twit.png"></a>
+         
+         <div id = "data_dig_crime">
+          <h2 id = "crime_val">0</h2>
+          <h5 id = "small_value">0</h6>
+          
+        </div>
+        
+        </p>
+        
+
+    </div>
+    
+    
+    
 
     <div id = "bar">
         
         
        <progress id = "progress_b"  max = "100" value = "0"></progress>
-
+    <script src = "crime_bar.js"></script><script src = "datacrime.js"></script>
     </div>
-    <script src ="crime_bar.js"></script> 
-    <div id = "textvalue">
-        
-        <p id = "txt_value">КРЫМНАШЕСТЬ:
-        <div id = "data_dig_crime">
-          <h2 id = "crime_val">0</h2>
-          <h5 id = "small_value">0</h6>
-          
-        </div>
-        <p id = "clear_data">очистить данные</p>
-        </p>
-        <script src = "datacrime.js"></script>
 
-    </div>
     
  </body>
  </html>
