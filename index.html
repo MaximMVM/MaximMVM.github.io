@@ -7,7 +7,8 @@
      <script src="obj.js"></script>
      <link rel="stylesheet" href="style.css">
      <script>
-     
+     var ololo = localStorage["crimes.progress"];
+     var ololo1 = localStorage["crimes.progress1"];
      </script>
      
      <title>Ватогенератор 2.0</title>
@@ -41,6 +42,8 @@
 <script>
     
 $(document).ready(function(){
+    if (localStorage["crimes.progress"] == undefined || NaN || null) localStorage["crimes.progress"] = '0';
+    if (localStorage["crimes.progress1"] == undefined || NaN || null) localStorage["crimes.progress1"] = '0';
   
  var link1 = document.getElementById("link"); 
  var cb = document.getElementById('cb');
@@ -48,13 +51,16 @@ $(document).ready(function(){
  var sound_chbx = document.getElementById('sound_chbx');
  var maxquote = x.length;
  var tweet1 = document.getElementById("tweet_l");
+ //auto_cr = 0;
  
  
  //functions
+
+ 
  
  $.fn.cotton = function(){
     ran1 = parseInt(Math.random() *(maxquote-1)) +1;
-    
+    textValColor();
     if (ran2 == 3) ran2 = 1 ;
     ion.sound.play(s_name[ran2]);
     ran2++;
@@ -117,13 +123,16 @@ $(document).ready(function(){
     
     <header>
         <div id = "must_no">
+            <a href="#" id = "close_must_no">X</a>
             <img id = "no_remove" src = "img/no_remove.jpg">
-            <p ><h1 id = "no_so">Нельзя просто так взять и полностью удалить все данные</h1></p>
+            <p><h1 id = "no_so">Нельзя просто так взять и полностью удалить все данные</h1></p>
+            <p id = "confirm">Ну на самом деле можно. Вы действительно хотите полностью удалить свою крымнашесть?</p>
+             <p id ="sol"><a href = "#" id = "cansel" class = "vote">отмена </a><a href="#" id = "ok" class = "vote"> удалить</a></p>
         </div>
         <div id = "overlay"></div>
+         <h1 id = "data_cl">Данные удалены</h1>   
             
-            
-        <div id = "setting"></div>
+        <a href="#"><div id = "setting"></div></a>
 
           <div id = "setting_window">
           <a href = "#"><span id = "close">X</span></a>
@@ -135,13 +144,16 @@ $(document).ready(function(){
             <p id = "pcb1" class="chbx_txt">Твитор отключен</p>
      <input type = "checkbox" id = "sound_chbx" onchange = "$(this).triggerSound();">
             <p id = "stat_sn"class="chbx_txt">Звук отключен</p>
+            
+            
      </span>
           
           
           <p id = "clear_data"  class = "set_data"><a href="#">очистить данные</a></p> 
           <p id = "beckup_data"  class = "set_data"><a href="#">востановить данные</a></p>
           <p id = "remove_data"  class = "set_data"><a href = "#">полностью удалить данные</a></p>
-          <p id = "twe_crime"  class = "set_data"><a href = "#">включить автомат</a></p>  
+          <p id = "auto_c"  class = "set_data"><a href = "#">автомат</a></p>
+          <p id = "stop_c"  class = "set_data"><a href = "#">стоп автомат</a></p>
           </div>  
         <progress id = "step_t" class = "bar_step" max = 300 value = "0" ></progress>
         
@@ -170,8 +182,8 @@ $(document).ready(function(){
          <p id = "txt_value"><h2>КРЫМНАШЕСТЬ:</h2><a id = "crimes_twee" href = "https://twitter.com/intent/tweet?text=" ><img id = "tweet_crimes" src="img/twit.png"></a>
          
          <div id = "data_dig_crime">
-          <h2 id = "crime_val">0</h2>
-          <h5 id = "small_value">0</h6>
+          <h2 id = "crime_val" class = "dig_val">0</h2>
+          <h5 id = "small_value" class = "dig_val">0</h6>
           
         </div>
         

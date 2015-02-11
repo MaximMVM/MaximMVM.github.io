@@ -12,7 +12,7 @@ color: #000;
 #setting{
 position:fixed;
 right:15px;
-top: 15px;
+top: 25px;
 border: solid 2px #c0c0c0;
 border-radius: 7px;
 width:42px;
@@ -58,7 +58,9 @@ margin-top:-22px;
 font-family: 'Times New Roman', Times, serif;
 font-size: 150%;
 }
-
+#stop_c{
+display:none;
+}
 #tweet_l{
 position:absolute;
 margin-left: 210px;
@@ -95,7 +97,7 @@ width: 100%;
 }
 
 #progress_b{
-width:90%;
+width:99%;
 height:21px;
 background: #f4f4f4;
 border:0;
@@ -112,22 +114,26 @@ background: #f4f4f4;
     
 }
 #textvalue{
-margin-top: 280px;
-margin-left:38%;
-}
-#textvalue > h2 {
-color: #660000;
+margin-top: 300px;
+margin-left:35%;
+//color:#660000;
 }
 #txt_value{
 font-family: 'Arial','Times New Roman', Times, serif;
 font-size: 150%;
 }
 #data_dig_crime{
-margin-left: 70px;
+display:block;
+margin-left: 210px;
+margin-top: 0px;
+
+}
+.dig_val{
+display:inline;
 }
 #small_value{
-margin-top: -12px;
-margin-left: 3px;
+margin-top: 0px;
+margin-left: 0px;
 }
 #clear_data{
 width: 110pt;
@@ -159,30 +165,33 @@ border-radius: 5px;
 }
 #tweet_crimes{
 width:18px;
+display:block;
 }
 #crimes_twee{
 display:block;
 width:20px;
-margin-left:200px;
+margin-left:270px;
 margin-top:-60px;
 }
 #must_no{
 position:absolute;
-left:23%;
-top:15%;
-width:650px;
+right:20%;
+top:8%;
+width:60%;
 float:left;
 background: #f4f4f4;
 border: solid 4px #000;
 border-radius: 8px;
 display:none;
 }
+
 #no_so{
-padding:10px;
+padding: -10px 5px -5px 5px;
 text-align:center;
 }
 #no_remove{
-padding: 20px 0px 0px 60px;
+width: 88%;
+padding: 20px 0px 0px 5.7%; /*верхний правый нижний левый блять заебался не запомню никак*/
 }
 #overlay{
 display:none;
@@ -194,5 +203,47 @@ border: solid 2px #000;
 border-radius:10px;
 background:#000;
 opacity: 0.4;
-z-index:10;
+z-index:15;
+}
+#close_must_no{
+display:block;
+margin-top:5px;
+margin-left: 97%;
+color:#660000;
+}
+#confirm{
+padding:5px;
+margin-left: 10px;
+}
+#sol{
+padding-right:8px;
+height:20px;
+float:right;
+color:#fff;
+}
+.vote{
+margin:auto;
+padding:2px 5px 2px 5px;
+border: solid 1px ##567CA4;
+border-radius:6px;
+background: #567CA4;
+color:c0c0c0;
+}
+.vote:first-child{
+margin-right: 7px;
+}
+.vote:hover{
+background:rgba(50, 100, 151, 0.7);
+}
+.vote:visited{
+color:#c0c0c0;
+}
+#data_cl{
+position:absolute;
+z-index:30;
+display:none;
+color:#660000;
+top:30%;
+left:30%;
+font-size:400%;
 }

@@ -6,7 +6,7 @@ var big_val = document.getElementById('crime_val');
 var set_win_st = document.getElementById('setting_window');
 
         if (crime_val.value == 0) {
-                crime_val.value = localStorage["crimes.progress1"];
+                crime_val.value = Number(localStorage["crimes.progress1"]);
              };
 
         
@@ -49,7 +49,6 @@ $('#setting').click(function(){
      progress.value = localStorage["crimes.progress1"];
      $('#small_value').text(localStorage["crimes.progress1"]);
      $('#crime_val').text(localStorage["crimes.progress"]);
-     //alert ('clear');
  });
  
  $('#remove_data').click(function(){
@@ -58,8 +57,25 @@ $('#setting').click(function(){
     $('#must_no').css('z-index', '20');
  });
  
- $('#overlay').click(function(){
+ $('#overlay, #close_must_no, #cansel').click(function(){
      $('#must_no').css('display', 'none');
     $('#overlay').css('display', 'none');
      
  });
+ $('#ok').click(function() {
+     localStorage["backup.progress"] = localStorage["crimes.progress"] = 0;
+     localStorage["backup.progress1"] = localStorage["crimes.progress1"] = 0;
+     progress.value = 0;
+     $('#small_value').text(localStorage["crimes.progress1"]);
+     $('#crime_val').text(localStorage["crimes.progress"]);
+     //$('#close_must').('Данные удалены, крымнашесть равна нулю');
+     //$('#no_remove').hide("slow");
+     
+     $('#must_no').hide("slow");
+     $('#data_cl').show(1000);
+     
+     setTimeout("$('#overlay, #data_cl').css('display','none');", 1500);
+     
+     
+ });
+ 
