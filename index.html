@@ -2,15 +2,11 @@
 <html manifest="orig_manifest">
  <head>
      <meta charset="utf-8">
-     <script src="jquery-2-1-1.js"></script>
-     <script src="ion.sound-master/js/ion.sound.min.js"></script>
-     <script src="obj.js"></script>
-     <link rel="stylesheet" href="style.css">
-     <script>
-     var ololo = localStorage["crimes.progress"];
-     var ololo1 = localStorage["crimes.progress1"];
-     </script>
-     
+     <script src="js/jquery-2-1-1.js"></script>
+     <script src="js/ion.sound-master/js/ion.sound.min.js"></script>
+     <script src="js/obj.js"></script>
+     <link rel="stylesheet" href="css/style.css">
+
      <title>Ватогенератор 2.0</title>
      
     <script>
@@ -30,7 +26,7 @@
 
     ],
     volume: 1.0,
-    path: "ion.sound-master/sounds/",
+    path: "js/ion.sound-master/sounds/",
     preload: true
 });
    
@@ -51,7 +47,6 @@ $(document).ready(function(){
  var sound_chbx = document.getElementById('sound_chbx');
  var maxquote = x.length;
  var tweet1 = document.getElementById("tweet_l");
- //auto_cr = 0;
  
  
  //functions
@@ -79,7 +74,7 @@ $(document).ready(function(){
         link1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1];
         $('#quote').text(x[ran1]);
     }
-      if (! cb1.checked) link1.href = "#1";
+      if (! cb1.checked) link1.href = "#";
     
       
   }; 
@@ -157,7 +152,7 @@ $(document).ready(function(){
           </div>  
         <progress id = "step_t" class = "bar_step" max = 300 value = "0" ></progress>
         
-        <h2 id = "quote">
+        <h2 id = "quote">Ватогенератор 2.0, например
     
         </h2>
         <progress id = "step" class = "bar_step" max = 300 value = "0" ></progress>
@@ -199,7 +194,8 @@ $(document).ready(function(){
         
         
        <progress id = "progress_b"  max = "100" value = "0"></progress>
-    <script src = "crime_bar.js"></script><script src = "datacrime.js"></script>
+    <script src = "js/crime_bar.js"></script>
+    <script src = "js/datacrime.js"></script>
     </div>
 
     
