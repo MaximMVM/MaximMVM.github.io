@@ -24,7 +24,7 @@ $('#search_f').keydown(function(event){
         
         for (var t1 in filtered){
              var str = '<span class = "reg">'+ qwe +'</span>';
-            $('#quote').append('<br>' + filtered[t1].replace(qwe, str, 'gi') + ' <br>');
+            $('#quote').append('<br>' + t1 + ') '+ filtered[t1].replace(qwe, str, 'gi') + ' <br>');
             
             
         };

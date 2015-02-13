@@ -1,5 +1,6 @@
 CACHE MANIFEST
-#11.02.2015
+#13.02.2015
+CACHE:
 index.html
 style.css
 #
@@ -12,6 +13,7 @@ img/no_remove.jpg
 #
 crime_bar.js
 js/obj.js
+js/search.js
 js/jquery-2-1-1.js
 js/ion.sound-master/js/ion.sound.js
 js/ion.sound-master/js/jquery.sound.js
