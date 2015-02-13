@@ -5,11 +5,17 @@
      <script src="js/jquery-2-1-1.js"></script>
      <script src="js/ion.sound-master/js/ion.sound.min.js"></script>
      <script src="js/obj.js"></script>
+     <script src="js/search.js"></script>
+    
      <link rel="stylesheet" href="css/style.css">
 
      <title>Ватогенератор 2.0</title>
      
     <script>
+
+        //alert(filtered);
+            
+        
         //sounds
     var s_name = [];
           ion.sound({
@@ -108,6 +114,12 @@ $(document).ready(function(){
          $('#stat_sn').text('Звук включен');
      }
  };
+ 
+
+
+
+     
+     
   
 });
     </script>
@@ -117,6 +129,13 @@ $(document).ready(function(){
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     
     <header>
+        
+         <form id = "qwe1"  method="" onsubmit="return false;">
+            <input name="q" id ="search_f" type="search"  autofocus >
+            <input type="button" onclick = "$(this).searchQuote();" value="Найти">
+            </form>
+         
+        
         <div id = "must_no">
             <a href="#" id = "close_must_no">X</a>
             <img id = "no_remove" src = "img/no_remove.jpg">
@@ -138,7 +157,7 @@ $(document).ready(function(){
      <input type = "checkbox" id = "cb1" onchange = "$(this).triggerTwi()">
             <p id = "pcb1" class="chbx_txt">Твитор отключен</p>
      <input type = "checkbox" id = "sound_chbx" onchange = "$(this).triggerSound();">
-            <p id = "stat_sn"class="chbx_txt">Звук отключен</p>
+            <p id = "stat_sn" class="chbx_txt">Звук отключен</p>
             
             
      </span>
@@ -165,7 +184,7 @@ $(document).ready(function(){
      <a id = "tweet_l" href = "https://twitter.com/intent/tweet?text=" ><img src="img/twit.png"></a>
      
      <a id = "link" onclick = "$(this).cotton();" href = "https://twitter.com/intent/tweet?text=" title="заватить" > 
-     <img id="rus" src="img/russia.png" width="200px">
+     <img id="rus" src="img/russia.png" width="200">
      </a>
      
      
