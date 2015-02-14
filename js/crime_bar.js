@@ -15,7 +15,7 @@ var changeProgress = function() {
     step.value = step.max;
     step_t.value = step_t.max;
     localStorage["crimes.progress1"] = progress.value;
-    crime_twee.href = 'https://twitter.com/intent/tweet?text=Прокачал свою крымнашесть на  ' + localStorage["crimes.progress"] + ' и ' + progress.value + ' крымнаша';
+    crime_twee.href = 'https://twitter.com/intent/tweet?text=Прокачал свою крымнашесть на  ' + localStorage["crimes.progress"] + ' и ' + localStorage["crimes.progress1"] + ' крымнаша. ' + location.href;
 
     id_dec = setInterval('stepProgress()', 250);
     
