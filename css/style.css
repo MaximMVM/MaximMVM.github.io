@@ -41,12 +41,8 @@ display:none;
 .reg{
 color:#660000;
 }
-.small_reg{
-border: solid 4px #0c00;
-border-radius: 5px;
-font-size: 70%;
-margin-left:10%;
-opacity: 0.7;
+.quote_s{
+
 }
 #main{
 float:left;
