@@ -68,7 +68,12 @@ $('#search_f').keydown(function(event){
         });
      
      
-     
+ };
+ 
+ $.fn.searchClear = function() {
+     $('#search_f').val(null);
+     //alert();
+     $('#quote').text(null);
  };
  
 
