@@ -41,16 +41,16 @@ $('#search_f').keydown(function(event){
          winHeight_t = screen.height;
          winWidth_t = screen.width;
          left = Math.round((winWidth_t / 2) - (width_t / 2));
-         top = 0;
+         top_s = 0;
         if (winHeight_t > height_t) {
-          top = Math.round((winHeight_t / 2) - (height_t / 2)+90);
+          top_s = Math.round((winHeight_t / 2) - (height_t / 2));
         }
         
         var href_win = 'https://twitter.com/intent/tweet?text=' + buff;
         if(buff) {
         
             window.open(href_win, 'intent', windowOptions + ',width=' + width_t +
-                                           ',height=' + height_t + ',left=' + left + ',top=' + top);
+                                           ',height=' + height_t + ',left=' + left + ',top=' + top_s);
                                            
             window.__twitterIntentHandler = true;
         
