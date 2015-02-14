@@ -46,8 +46,15 @@ $('#search_f').keydown(function(event){
           top_s = Math.round((winHeight_t / 2) - (height_t / 2));
         }
         
-        var href_win = 'https://twitter.com/intent/tweet?text=' + buff;
+        
+        var numb_del = /[0-9]+\)/gim;
+        var href_win = 'https://twitter.com/intent/tweet?text=' + buff.replace(numb_del, "");
+        
+        
         if(buff) {
+            
+            
+            
         
             window.open(href_win, 'intent', windowOptions + ',width=' + width_t +
                                            ',height=' + height_t + ',left=' + left + ',top=' + top_s);
