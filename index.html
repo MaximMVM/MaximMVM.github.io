@@ -129,12 +129,18 @@ $(document).ready(function(){
     
     <header>
         
+      <div id = "searchblock">
+        
+        
          <form id = "qwe1"  method="" onsubmit="return false;">
-            <input name="q" id ="search_f" type="search"  autofocus >
-            <input type="button" onclick = "$(this).searchQuote();" value="Найти">
-            <input type="button" onclick = "$(this).searchClear();" value="Очистить">
+            <input name="q" id ="search_f" type="search" placeholder="Поиск по цитатам"  autofocus >
+            <input type="image" id = "search_b" src="img/search.png" alt = "найти" onclick = "$(this).searchQuote();" value="Найти">
+            <input type="image" id = "web-speech" src = "img/mic.png" title = "Голосовой поиск" onclick="startButton(event);" alt = "Голосовой">
+            <input type="button" id="clear_btn" onclick = "$(this).searchClear();" value="Очистить">
+            
             </form>
          
+         </div>
         
         <div id = "must_no">
             <a href="#" id = "close_must_no">X</a>
@@ -187,7 +193,7 @@ $(document).ready(function(){
      <img id="rus" src="img/russia.png" width="200">
      </a>
      
-     
+     <script src = "js/web-speech.js"></script>
            
     </div>
     
@@ -216,6 +222,10 @@ $(document).ready(function(){
     <script src = "js/crime_bar.js"></script>
     <script src = "js/datacrime.js"></script>
     </div>
+    
+
+    
+
     
 
 

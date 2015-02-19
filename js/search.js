@@ -1,5 +1,9 @@
-$(document).ready(function()
-{   
+$(document).ready(function(){  
+    
+  
+  
+  
+     
         
 $('#search_f').keydown(function(event){
     if(event.keyCode==13) $.fn.searchQuote();

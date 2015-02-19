@@ -2,7 +2,7 @@ CACHE MANIFEST
 #14.02.2015
 CACHE:
 index.html
-style.css
+css/style.css
 #
 img/russia.png
 img/twit.png
@@ -22,3 +22,5 @@ js/ion.sound-master/sounds/crime.mp3
 js/ion.sound-master/sounds/our.mp3
 js/ion.sound-master/sounds/crime.ogg
 js/ion.sound-master/sounds/our.ogg
+NETWORK:
+js/web-speech.js
