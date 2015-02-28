@@ -16,8 +16,8 @@ color: #000;
 border: solid 2px #f4f4f4;
 padding: 2pt 0 2pt 0;
 border-radius:15px;
-background: -moz-linear-gradient(bottom, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
-background: -webkit-linear-gradient(bottom, #e2e2e2 0%, #dbdbdb 50%, #d1d1d1 51%, #fefefe 100%);
+background: -moz-linear-gradient(top, #fefefe 2%,  #d1d1d1 55%, #fefefe 98%);
+background: -webkit-linear-gradient(top, #fefefe 2%,  #d1d1d1 55%, #fefefe 98%);
 }
 
 
@@ -55,6 +55,25 @@ height:42px;
 background-image: url(../img/setting.png);
 background-repeat: no-repeat;
 box-shadow: 0 4px 4px rgba(0,0,0,0.5);
+}
+#setting_window{
+position:fixed;
+top:120px;
+right:15px;
+min-width:180px;
+display:none;
+background:#f8f8f8;
+border: solid 2px #c0c0c0;
+border-radius:8px;
+box-shadow: 0 2px 2px rgba(0,0,0,0.5);
+float:left;
+}
+#close{
+color:#660000;
+margin-left:90%;
+padding:2px;
+border: solid 1px #c0c0c0;
+border-radius: 5px;
 }
 #quote{ 
 min-height:100px;
@@ -182,25 +201,7 @@ padding: 5px 10px 5px 10px;
 border: solid 1px #0c0c0;
 border-radius:8px;
 }
-#setting_window{
-position:fixed;
-top:90px;
-right:15px;
-min-width:180px;
-display:none;
-background:#f8f8f8;
-border: solid 2px #c0c0c0;
-border-radius:8px;
-box-shadow: 0 2px 2px rgba(0,0,0,0.5);
-float:left;
-}
-#close{
-color:#660000;
-margin-left:90%;
-padding:2px;
-border: solid 1px #c0c0c0;
-border-radius: 5px;
-}
+
 #tweet_crimes{
 width:18px;
 display:block;
