@@ -4,6 +4,7 @@ var crime_val = document.getElementById('progress_b');
 var small_v = document.getElementById('small_value');
 var big_val = document.getElementById('crime_val');
 var set_win_st = document.getElementById('setting_window');
+var tmp, tmp1;
 
         if (crime_val.value == 0) {
                 crime_val.value = Number(localStorage["crimes.progress1"]);
@@ -15,10 +16,20 @@ var set_win_st = document.getElementById('setting_window');
  if (big_val.innerHTML == '0') big_val.innerHTML = localStorage["crimes.progress"];
  
  document.addEventListener("visibilitychange", function() {
-        
-    small_v.innerHTML = localStorage["crimes.progress1"];
-    big_val.innerHTML = localStorage["crimes.progress"];
-    console.log('перключена вкладка')
+
+
+    localStorage["backup.progress"] = localStorage["crimes.progress"];
+    localStorage["backup.progress1"] = localStorage["crimes.progress1"];
+    progress.value = localStorage["crimes.progress1"];
+    
+    small_v.innerHTML = localStorage["backup.progress1"];
+    big_val.innerHTML = localStorage["backup.progress"];
+
+    localStorage["crimes.progress"] = localStorage["backup.progress"];
+    localStorage["crimes.progress1"] = localStorage["backup.progress1"];
+    progress.value = localStorage["crimes.progress1"];
+
+    //я тут запутался чото, но вроде работает
 
     });
 
