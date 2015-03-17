@@ -14,6 +14,14 @@ var set_win_st = document.getElementById('setting_window');
  if (small_v.innerHTML == '0') small_v.innerHTML = localStorage["crimes.progress1"];
  if (big_val.innerHTML == '0') big_val.innerHTML = localStorage["crimes.progress"];
  
+ document.addEventListener("visibilitychange", function() {
+        
+    small_v.innerHTML = localStorage["crimes.progress1"];
+    big_val.innerHTML = localStorage["crimes.progress"];
+    console.log('перключена вкладка')
+
+    });
+
  
  $('#close').click(function(){
      $('#setting_window').css('z-index', '0');
