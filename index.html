@@ -55,6 +55,7 @@ $(document).ready(function(){
  var sound_chbx = document.getElementById('sound_chbx');
  var maxquote = x.length;
  var tweet1 = document.getElementById("tweet_l");
+ var bredR = document.getElementById("bred");
  crime_twee.href = 'https://twitter.com/intent/tweet?text=Прокачал свою крымнашесть на  ' + localStorage["crimes.progress"] + ' и ' + localStorage["crimes.progress1"] + ' крымнаша. ' + location.href;
  
  //functions
@@ -71,18 +72,31 @@ $(document).ready(function(){
     $("#small_value").text(progress.value);
     $("#crime_val").text(localStorage["crimes.progress"]);
     $('#rus').animate( { width:"185px" }, 60).animate( { width: "200px" }, 80);
+
+
+  
+
     tweet1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1];
-    if (cb.checked) {
+
+      if (cb.checked) {
          link1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1].toUpperCase() + '!11';
          $('#quote').text(x[ran1].toUpperCase());
          tweet1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1].toUpperCase();
-     }
+      }
     
-    else {
+      else {
         link1.href = 'https://twitter.com/intent/tweet?text=' + x[ran1];
         $('#quote').text(x[ran1]);
+      }
+        if (! cb1.checked) link1.href = "#";
+
+
+    if(bredR.checked){
+      var zr = randomWord();
+      $("#quote").text(zr);
+      tweet1.href = 'https://twitter.com/intent/tweet?text=' + zr;
+      //link1.href = 'https://twitter.com/intent/tweet?text=' + zr;
     }
-      if (! cb1.checked) link1.href = "#";
     
       
   }; 
@@ -116,6 +130,15 @@ $(document).ready(function(){
          $('#stat_sn').text('Звук включен');
      }
  };
+
+ $.fn.bredOn = function(){
+    if(bredR.checked){
+        $("#p_breed").text("Бред влючен");
+    }
+    else{
+        $("#p_breed").text("Бред отключен");
+    }
+ }
  
 
 
@@ -167,6 +190,8 @@ $(document).ready(function(){
             <p id = "pcb1" class="chbx_txt">Твитор отключен</p>
      <input type = "checkbox" id = "sound_chbx" onchange = "$(this).triggerSound();">
             <p id = "stat_sn" class="chbx_txt">Звук отключен</p>
+     <input type = "checkbox" id = "bred" onchange = "$(this).bredOn();">
+            <p id = "p_breed" class = "chbx_txt"> Бред отключен</p>
             
             
      </span>
@@ -224,7 +249,7 @@ $(document).ready(function(){
        <progress id = "progress_b"  max = "100" value = "0"></progress>
 
     <script>
-    //сохранение сотстояния при перключении между вкладками
+    
     
 
     </script>
