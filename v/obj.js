@@ -51,7 +51,35 @@ function randomWord(){
  }
  return zR;
 }
-   
+
+function randomClause() {
+	var countRm = getRandomInt(0, 12);
+	var i = 0;
+	var text = "";
+	while (i < countRm) {
+		var blob = v[getRandomInt(0, v.length)];
+		var pargrph = blob.split(/"."/);
+		var iRm = getRandomInt(0, pargrph.length);
+
+		if (pargrph[iRm - 1] == undefined || null)
+			pargrph[iRm - 1] = "";
+		if (pargrph[iRm + 1] == undefined || null)
+			pargrph[iRm + 1] = "";
+
+		var sent = pargrph[iRm - 1] + " " + pargrph[iRm] + " " + pargrph[iRm + 1];
+		text += sent + " ";
+		console.log(text);
+		i++;
+
+	}
+
+   return text;
+}
+
+
+
+
+
 
 
  

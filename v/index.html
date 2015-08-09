@@ -14,15 +14,24 @@
      <meta name = "robots" content = "index,nofollow">
 
      <style>
-     #but{
-       position:absolute;
-       bottom:40px;
-       left:38%;
+     #qwe{
+      margin-left: 39%;
+     }
+     .but{
        width:10%;
-       height:8%;
-       background-color: #B22222;
-       border-radius:35px;
+       height:12%;
+       
+       border-radius:65px;
        color:#fff;
+     }
+     #but1{
+      bottom:50px;
+      background-color: #B22222;
+     }
+     #but2{
+      bottom:50px;
+      margin-left: 20px;
+      background-color: #0C37E6;
      }
      </style>
 
@@ -37,8 +46,11 @@
      var qwe = randomWord();
      $("#quote").text(qwe);
   }
-
-
+ 
+  $.fn.photoWiz1 = function() {
+    var qwe = randomClause();
+    $("#quote").text(qwe);
+  }
 
 
  });
@@ -57,12 +69,10 @@
 
 
 
-
-<button id = "but" type = "button" onClick = "$(this).photoWiz();"> <h4>кнопка</h4> </button>
-
-
-
-
+<div id ="qwe">
+ <button class = "but" id = "but1" type = "button" onClick = "$(this).photoWiz();"> <h4>кнопка</h4> </button>
+ <button class = "but" id = "but2" type = "button" onClick = "$(this).photoWiz1()"> <h4>кнопка</h4> </button>
+</div>
 
 
 
@@ -71,4 +81,8 @@
 
 
 
+
+
+
+</body>
 </html>
