@@ -68,13 +68,14 @@ function randomClause() {
 
 		var sent = pargrph[iRm - 1] + " " + pargrph[iRm] + " " + pargrph[iRm + 1];
 		text += sent + " ";
-		console.log(text);
 		i++;
 
 	}
 
    return text;
 }
+
+
 
 
 
